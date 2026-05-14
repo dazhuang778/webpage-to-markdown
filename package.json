@@ -1,0 +1,29 @@
+{
+  "name": "webpage-to-markdown",
+  "version": "1.0.0",
+  "description": "Chrome extension: convert any webpage to Markdown",
+  "scripts": {
+    "build:popup": "vite build --config vite.config.ts",
+    "build:content": "vite build --config vite.config.content.ts",
+    "build:background": "vite build --config vite.config.background.ts",
+    "build:assets": "node scripts/copy-assets.mjs",
+    "build": "npm run build:popup && npm run build:content && npm run build:background && npm run build:assets",
+    "dev": "npm run build:content & npm run build:background & vite build --config vite.config.ts --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chrome": "^0.1.42",
+    "@types/jszip": "^3.4.0",
+    "@types/turndown": "^5.0.6",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "jszip": "^3.10.1",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}

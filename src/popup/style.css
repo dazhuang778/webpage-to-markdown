@@ -1,0 +1,156 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  background: #fff;
+  color: #1a1a1a;
+  min-width: 280px;
+  max-width: 320px;
+}
+
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Mode selector */
+.mode-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mode-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.mode-label:has(input:checked) {
+  border-color: #6366f1;
+  background: #f5f3ff;
+}
+
+.mode-label input[type="radio"] {
+  margin-top: 2px;
+  accent-color: #6366f1;
+  flex-shrink: 0;
+}
+
+.mode-label span {
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.mode-label small {
+  display: block;
+  color: #6b7280;
+  font-size: 11px;
+  margin-top: 1px;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #6366f1;
+  color: #fff;
+}
+
+.btn-primary:not(:disabled):hover {
+  background: #4f46e5;
+}
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-secondary:not(:disabled):hover {
+  background: #e5e7eb;
+}
+
+/* Progress */
+.progress-area {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.progress-bar-track {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #6366f1;
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Status */
+.status {
+  font-size: 12px;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.status.success {
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.status.error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>网页转 Markdown</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">网页转 Markdown</h1>
+
+    <div class="mode-group" role="radiogroup" aria-label="转换模式">
+      <label class="mode-label">
+        <input type="radio" name="mode" value="smart" checked />
+        <span>智能提取</span>
+        <small>去除广告/导航，适合文章</small>
+      </label>
+      <label class="mode-label">
+        <input type="radio" name="mode" value="full" />
+        <span>完整页面</span>
+        <small>保留所有内容</small>
+      </label>
+    </div>
+
+    <div class="actions">
+      <button id="btn-copy" class="btn btn-secondary">复制 MD</button>
+      <button id="btn-download" class="btn btn-primary">下载 MD</button>
+    </div>
+
+    <div id="progress-area" class="progress-area hidden">
+      <div class="progress-bar-track">
+        <div id="progress-bar" class="progress-bar-fill"></div>
+      </div>
+      <span id="progress-text" class="progress-text">准备中...</span>
+    </div>
+
+    <div id="status" class="status hidden"></div>
+  </div>
+
+  <script type="module" src="main.ts"></script>
+</body>
+</html>
